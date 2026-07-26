@@ -1,4 +1,4 @@
-# nuum_website
+# website
 
 T3 Stack app (Next.js, tRPC, Prisma, Tailwind) with Supabase Postgres and Vercel deploy.
 
@@ -15,7 +15,11 @@ T3 Stack app (Next.js, tRPC, Prisma, Tailwind) with Supabase Postgres and Vercel
 npm install
 cp .env.example .env
 # fill in DATABASE_URL and DIRECT_URL (see below)
+npx prisma generate
+
+# Only necessary to push schemas to Supabase
 npm run db:push
+
 npm run dev
 ```
 

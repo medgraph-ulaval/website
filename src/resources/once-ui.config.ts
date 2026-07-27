@@ -1,4 +1,11 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import type { RoutesConfig } from "../types/config.types";
+
+const routes : RoutesConfig = {
+  "/": true,
+  "/about": true,
+  "/register": true
+}
 
 const heading = Geist({
   variable: "--font-heading",
@@ -59,4 +66,4 @@ const dataStyle = {
   },
 };
 
-export { fonts, style, dataStyle };
+export { fonts, style, dataStyle, routes };

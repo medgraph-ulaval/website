@@ -8,10 +8,11 @@ import { Column, ThemeInit } from "@once-ui-system/core";
 
 import { Providers } from "~/components/Providers";
 import { dataStyle, fonts, style } from "~/resources/once-ui.config";
+import { Header } from "./_components/Header";
 
 export const metadata: Metadata = {
-  title: "Nuum",
-  description: "Nuum website",
+  title: "Website",
+  description: "Website",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           padding="0"
           style={{ minHeight: "100vh" }}
         >
+          <Header/>
           {children}
         </Column>
       </Providers>

@@ -3,13 +3,13 @@
 import {Fade, Row, ToggleButton, Line} from "@once-ui-system/core"
 import { usePathname } from "next/navigation";
 import {routes} from "../../resources/once-ui.config"
+import Image from "next/image";
 
 export const Header = () => {
     const pathname = usePathname() ?? "";
 
     return(
         <>
-            <Fade fillWidth position="fixed" height="80" zIndex={9} />
             <Row
             fitHeight
             position="sticky"
@@ -19,7 +19,12 @@ export const Header = () => {
             padding="8"
             horizontal="center"
             data-border="rounded"
+            background="page"
             >
+                <Row paddingLeft="12" fillWidth horizontal="start" vertical="center" textVariant="body-default-s">
+                    <Image src="/logo.svg" alt="Hedron logo" width={32} height={32}/>
+                </Row>
+
                 <Row
                 background="page"
                 border="neutral-alpha-weak"
@@ -41,14 +46,16 @@ export const Header = () => {
                         <Line background="neutral-alpha-medium" vert maxHeight="24" />
 
                         {routes["/about"] && (
-                            <ToggleButton prefixIcon="at" href="/about" selected={pathname === "about"} label="About"/>
+                            <ToggleButton prefixIcon="at" href="/about" selected={pathname === "/about"} label="About"/>
                         )}
 
                         {routes["/register"] && (
-                            <ToggleButton prefixIcon="cursor" href="/register" selected={pathname === "register"} label="Register"/>
+                            <ToggleButton prefixIcon="cursor" href="/register" selected={pathname === "/register"} label="Register"/>
                         )}
                     </Row>
                 </Row>
+
+                <Row fillWidth/>
             </Row>
         </>)
     ;

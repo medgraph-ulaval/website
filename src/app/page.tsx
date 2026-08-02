@@ -1,27 +1,56 @@
-import { Button, Column, Heading, Icon, Text } from "@once-ui-system/core";
+import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background } from "@once-ui-system/core";
 
-import { api, HydrateClient } from "~/trpc/server";
+import { api } from "~/trpc/server";
+import Isohedron from "./_components/Isohedron";
 
 export default async function Home() {
   const hello = await api.post.hello({ text: "from Once UI" });
 
   return (
-    <HydrateClient>
-      <Column
-        fillWidth
-        padding="64"
-        gap="24"
-        horizontal="center"
-        vertical="center"
-        style={{ minHeight: "100vh" }}
+    <Column
+    fillWidth
+    paddingX="64"
+    paddingY="48"
+    >
+      <Row
+      fillWidth
+      gap="48"
+      direction="row"
+      vertical="center"
+      horizontal="between"
+      m={{direction: "column", horizontal: "center"}}
       >
-        <Icon name="rocket" size="xl" onBackground="brand-strong" />
-        <Heading variant="display-strong-l">Nuum</Heading>
-        <Text variant="body-default-l" onBackground="neutral-weak" align="center">
-          {hello.greeting}
-        </Text>
-        <Button href="https://docs.once-ui.com" variant="primary" label="Once UI docs" />
-      </Column>
-    </HydrateClient>
+        <Column
+          gap="24"
+          fillWidth
+          width={40}
+          horizontal="center"
+          vertical="center"
+        >
+          <RevealFx m={{horizontal: "center"}}>
+            <Heading variant="display-strong-xl">HEDRON</Heading>
+          </RevealFx>
+
+          <RevealFx delay={0.2} m={{horizontal: "center"}}>
+            <Text variant="heading-default-l" onBackground="neutral-weak">The first medical-grade harness.</Text>
+          </RevealFx>
+
+          <RevealFx delay={0.4} m={{horizontal: "center"}}>
+            <Row gap="12" m={{horizontal: "center"}}>
+              <Button href="/register" variant="primary" size="l" label="Register"/>
+            </Row>
+          </RevealFx>
+        </Column>
+
+        <Column fillWidth flex={1}>
+          <RevealFx delay={0.6}>
+            <Isohedron/>
+          </RevealFx>
+        </Column>
+
+      </Row>
+
+
+    </Column>
   );
 }

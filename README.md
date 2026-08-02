@@ -12,7 +12,7 @@ T3 Stack app (Next.js, tRPC, Prisma, Tailwind) with Supabase Postgres and Vercel
 ## Local setup
 
 ```bash
-npm install
+npm install 
 cp .env.example .env
 # fill in DATABASE_URL and DIRECT_URL (see below)
 npx prisma generate

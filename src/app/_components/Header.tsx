@@ -4,6 +4,7 @@ import {Fade, Row, ToggleButton, Line} from "@once-ui-system/core"
 import { usePathname } from "next/navigation";
 import {routes} from "../../resources/once-ui.config"
 import Image from "next/image";
+import { LanguageDropdown } from "./LangageDropdown";
 
 export const Header = () => {
     const pathname = usePathname() ?? "";
@@ -55,7 +56,9 @@ export const Header = () => {
                     </Row>
                 </Row>
 
-                <Row fillWidth/>
+                <Row fillWidth horizontal="end" paddingRight="12">
+                    <LanguageDropdown/>
+                </Row>
             </Row>
         </>)
     ;

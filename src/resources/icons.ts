@@ -1,11 +1,15 @@
 import type { IconType } from "react-icons";
 import { HiAtSymbol, HiCursorArrowRipple, HiOutlineHome, HiOutlineRocketLaunch } from "react-icons/hi2";
+import {FaGithub, FaLinkedin, FaYoutube} from "react-icons/fa"
 
 export const iconLibrary: Record<string, IconType> = {
   rocket: HiOutlineRocketLaunch,
   home: HiOutlineHome,
   at: HiAtSymbol,
-  cursor: HiCursorArrowRipple
+  cursor: HiCursorArrowRipple,
+  github: FaGithub,
+  linkedin: FaLinkedin,
+  youtube: FaYoutube
 };
 
 export type IconLibrary = typeof iconLibrary;

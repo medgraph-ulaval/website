@@ -46,7 +46,7 @@ export default function Isohedron (){
         const material = new THREE.MeshBasicMaterial({
             color: 0xffffff,
             wireframe: true,
-            wireframeLinewidth: 15
+            wireframeLinewidth: 5
         })
 
         const icosahedron = new THREE.Mesh(geometry, material);

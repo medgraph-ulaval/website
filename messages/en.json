@@ -1,0 +1,25 @@
+{
+    "Header":{
+        "about": "About",
+        "register": "Register"
+    },
+    "Footer":{
+        "company": "Company",
+        "about": "About Us",
+        "blog": "Our Blog",
+        "contact": "Contact Us",
+
+        "socials": "Socials"
+    },
+    "HomePage":{
+        "subtitle": "The first medical-grade harness."
+    },
+
+    "AboutPage":{
+
+    },
+
+    "RegisterPage:":{
+
+    }
+}

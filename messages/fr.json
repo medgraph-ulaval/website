@@ -1,0 +1,25 @@
+{
+    "Header":{
+        "about": "À propos de nous",
+        "register": "S'inscrire"
+    },
+    "Footer":{
+        "company": "Entreprise",
+        "about": "À propos de nous",
+        "blog": "Notre blog",
+        "contact": "Nous contacter",
+
+        "socials": "Réseaux Sociaux"
+    },
+    "HomePage":{
+        "subtitle": "Le premier harnais de grade médical."
+    },
+
+    "AboutPage":{
+
+    },
+
+    "RegisterPage:":{
+
+    }
+}

@@ -9,6 +9,9 @@ import { Column, ThemeInit } from "@once-ui-system/core";
 import { Providers } from "~/components/Providers";
 import { dataStyle, fonts, style } from "~/resources/once-ui.config";
 import { Header } from "./_components/Header";
+import { Footer } from "./_components/Footer";
+
+import {NextIntlClientProvider} from "next-intl";
 
 export const metadata: Metadata = {
   title: "Website",
@@ -51,17 +54,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
         />
       </head>
       <Providers>
-        <Column
-          as="body"
-          background="page"
-          fillWidth
-          margin="0"
-          padding="0"
-          style={{ minHeight: "100vh" }}
-        >
-          <Header/>
-          {children}
-        </Column>
+        <NextIntlClientProvider>
+          <Column
+            as="body"
+            background="page"
+            fillWidth
+            margin="0"
+            padding="0"
+            style={{ minHeight: "100vh" }}
+          >
+            <Header/>
+            {children}
+            <Footer/>
+          </Column>
+        </NextIntlClientProvider>
       </Providers>
     </Column>
   );

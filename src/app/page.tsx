@@ -3,13 +3,17 @@ import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background } from "
 import { api } from "~/trpc/server";
 import Isohedron from "./_components/Isohedron";
 
+import { getTranslations } from "next-intl/server";
+
 export default async function Home() {
   const hello = await api.post.hello({ text: "from Once UI" });
+
+  const t = await getTranslations("HomePage");
 
   return (
     <Column
     fillWidth
-    paddingX="64"
+    paddingX="128"
     paddingY="48"
     >
       <Row
@@ -28,11 +32,11 @@ export default async function Home() {
           vertical="center"
         >
           <RevealFx m={{horizontal: "center"}}>
-            <Heading variant="display-strong-xl">HEDRON</Heading>
+            <Heading variant="display-strong-xl">MEDGRAPH</Heading>
           </RevealFx>
 
           <RevealFx delay={0.2} m={{horizontal: "center"}}>
-            <Text variant="heading-default-l" onBackground="neutral-weak">The first medical-grade harness.</Text>
+            <Text variant="heading-default-l" onBackground="neutral-weak">{t("subtitle")}</Text>
           </RevealFx>
 
           <RevealFx delay={0.4} m={{horizontal: "center"}}>

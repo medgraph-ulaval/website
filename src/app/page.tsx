@@ -1,4 +1,4 @@
-import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background } from "@once-ui-system/core";
+import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background,Fade, AutoScroll } from "@once-ui-system/core";
 
 import { api } from "~/trpc/server";
 import Isohedron from "./_components/Isohedron";
@@ -53,6 +53,24 @@ export default async function Home() {
         </Column>
 
       </Row>
+
+      <Row fillWidth position="relative" overflow="hidden">
+        <Fade zIndex="1" to="right" fillHeight width="64" position="absolute" left="0" top="0"/>
+        <AutoScroll paddingY="40">
+          <Text>FHIR</Text>
+          <Text>OMOP</Text>
+          <Text>SNOMED</Text>
+          <Text>PDF</Text>
+          <Text>LOINC</Text>
+          <Text>PNG</Text>
+          <Text>DICOM</Text>
+          <Text>XML</Text>
+          <Text>NII</Text>
+          <Text>HDR</Text>
+        </AutoScroll>
+        <Fade zIndex="1" to="left" fillHeight width="64" position="absolute" right="0" top="0" />
+      </Row>
+
 
 
     </Column>

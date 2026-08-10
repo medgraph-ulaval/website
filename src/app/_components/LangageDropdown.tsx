@@ -25,7 +25,7 @@ export const  LanguageDropdown = ()=>{
                         variant="tertiary"
                         size="s"
                         suffixIcon="chevronDown"
-                        label={locales.find((l:any) => l.value === locale)?.label}
+                        label={locales.find((l) => l.value === locale)?.label}
                         onClick={()=> setIsOpen(!isOpen)}
                     />
                 }

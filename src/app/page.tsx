@@ -1,4 +1,4 @@
-import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background,Fade, AutoScroll } from "@once-ui-system/core";
+import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background,Fade, AutoScroll, Media, Timeline, LetterFx } from "@once-ui-system/core";
 
 import { api } from "~/trpc/server";
 import Isohedron from "./_components/Isohedron";
@@ -15,6 +15,7 @@ export default async function Home() {
     fillWidth
     paddingX="128"
     paddingY="48"
+    gap="xl"
     >
       <Row
       fillWidth
@@ -46,7 +47,7 @@ export default async function Home() {
           </RevealFx>
         </Column>
 
-        <Column fillWidth flex={1}>
+        <Column fillWidth>
           <RevealFx delay={0.6}>
             <Isohedron/>
           </RevealFx>
@@ -71,7 +72,112 @@ export default async function Home() {
         <Fade zIndex="1" to="left" fillHeight width="64" position="absolute" right="0" top="0" />
       </Row>
 
+      <Row radius="l" border="neutral-alpha-medium" fillWidth padding="m" m={{direction: "column"}} gap="24" vertical="center" horizontal="center" align="center">
+        <Media
+          src="/logo_medium.svg"
+          alt="Medgraph"
+          width={15}
+          height={15}
+          objectFit="contain"
+          unoptimized
+          fillWidth
+          radius="l"
+          border="neutral-alpha-medium"
+          padding="l"
+        />
+        <Column gap="8" fillWidth>
+          <Heading variant="heading-strong-l">{t("medical_brain")}</Heading>
+          <Text variant="body-default-m" onBackground="neutral-weak">{t("medical_brain_subtitle")}</Text>
+        </Column>
+      </Row>
 
+      <Column fillWidth gap="24">
+        <Heading variant="heading-strong-l">How MEDGRAPH works</Heading>
+        <Timeline
+          fillWidth
+          size="s"
+          items={[
+            {
+              marker: 1,
+              label: "Ingest",
+              description: "Connect your medical data : FHIR, DICOM, PDFs, and more.",
+              state: "default",
+              children: (
+                <Row vertical="center" gap="48" margin="l">
+                  <Media
+                    src="/logo_medium.svg"
+                    alt="Medgraph"
+                    width={15}
+                    height={15}
+                    objectFit="contain"
+                    unoptimized
+                    fillWidth
+                    radius="l"
+                    border="neutral-alpha-medium"
+                    padding="l"
+                  />
+                  <LetterFx speed="slow" trigger="instant" charset={["+"]}>
+                    Lorem Ipsum
+                  </LetterFx>
+                </Row>
+              ),
+            },
+            {
+              marker: 2,
+              label: "Unify",
+              description: "Normalize into one patient timeline.",
+              state: "default",
+              children: (
+                <Row vertical="center" gap="48" margin="l">
+                  <Media
+                    src="/logo_medium.svg"
+                    alt="Medgraph"
+                    width={15}
+                    height={15}
+                    objectFit="contain"
+                    unoptimized
+                    fillWidth
+                    radius="l"
+                    border="neutral-alpha-medium"
+                    padding="l"
+                  />
+                  <LetterFx speed="slow" trigger="instant" charset={["+"]}>
+                    Lorem Ipsum
+                  </LetterFx>
+                </Row>
+              ),
+            },
+            {
+              marker: 3,
+              label: "Act",
+              description: "Query and reason over the medical brain.",
+              state: "default",
+              children: (
+                <Row vertical="center" gap="48" margin="l">
+                  <Media
+                    src="/logo_medium.svg"
+                    alt="Medgraph"
+                    width={15}
+                    height={15}
+                    objectFit="contain"
+                    unoptimized
+                    fillWidth
+                    radius="l"
+                    border="neutral-alpha-medium"
+                    padding="l"
+                  />
+                  <LetterFx speed="slow" trigger="instant" charset={["+"]}>
+                    Lorem Ipsum
+                  </LetterFx>
+                </Row>
+              ),
+            },
+            {
+              
+            }
+          ]}
+        />
+      </Column>
 
     </Column>
   );

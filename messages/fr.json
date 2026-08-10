@@ -12,7 +12,19 @@
         "socials": "Réseaux Sociaux"
     },
     "HomePage":{
-        "subtitle": "Le premier harnais de grade médical."
+        "subtitle": "Le premier harnais de grade médical.",
+        "medical_brain": "Contruisez votre cerveau médical",
+        "medical_brain_subtitle": "Toutes les données hétérogènes combinées donne un portrait de santé longitudinale.",
+        
+        "how_it_works": "Comment MEDGRAPH fonctionne",
+        "ingest": "Ingest",
+        "ingest_subtitle": "",
+        "unify": "Unify",
+        "unify_subtitle": "",
+        "act": "Act",
+        "act_subtitle": ""
+
+
     },
 
     "AboutPage":{

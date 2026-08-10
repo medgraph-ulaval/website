@@ -12,7 +12,10 @@
         "socials": "Socials"
     },
     "HomePage":{
-        "subtitle": "The first medical-grade harness."
+        "subtitle": "The first medical-grade harness.",
+        "medical_brain": "Build your medical brain",
+        "medical_brain_subtitle": "All heterogenous data combines for a complete health timeline.",
+        "how_it_works": "How MEDGRAPH works"
     },
 
     "AboutPage":{

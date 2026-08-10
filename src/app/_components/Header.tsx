@@ -23,7 +23,7 @@ export const Header = () => {
             background="page"
             >
                 <Row paddingLeft="12" fillWidth horizontal="start" vertical="center" textVariant="body-default-s">
-                    <Image src="/logo.svg" alt="Hedron logo" width={32} height={32}/>
+                    <Image src="/logo_small.svg" alt="Hedron logo" width={32} height={32}/>
                 </Row>
 
                 <Row

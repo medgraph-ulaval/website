@@ -7,7 +7,7 @@ import { waitlistRouter } from "./routers/waitlist";
  * All routers added in /api/routers should be manually added here.
  */
 export const appRouter = createTRPCRouter({
-  waitlist: waitlistRouter
+  waitlist: waitlistRouter,
 });
 
 // export type definition of API

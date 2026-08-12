@@ -28,7 +28,8 @@
     },
 
     "AboutPage":{
-
+        "title": "À propos de MEDGRAPH",
+        "subtitle": "Rencontrez les fondateurs"
     },
 
     "RegisterPage":{

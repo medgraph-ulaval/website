@@ -11,7 +11,7 @@ import { dataStyle, fonts, style } from "~/resources/once-ui.config";
 import { Header } from "./_components/Header";
 import { Footer } from "./_components/Footer";
 
-import {NextIntlClientProvider} from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title: "Website",
@@ -63,9 +63,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
             padding="0"
             style={{ minHeight: "100vh" }}
           >
-            <Header/>
+            <Header />
             {children}
-            <Footer/>
+            <Footer />
           </Column>
         </NextIntlClientProvider>
       </Providers>

@@ -1,115 +1,113 @@
-'use client'
+"use client";
 
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
-export default function Isohedron (){
-    const containerRef = useRef<HTMLDivElement>(null);
+export default function Isohedron() {
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(()=>{
-        const container = containerRef.current;
+  useEffect(() => {
+    const container = containerRef.current;
 
-        if (!container) return;
-        
-        const scene = new THREE.Scene();
+    if (!container) return;
 
-        const getSize = () => ({
-            width: container.clientWidth,
-            height: container.clientHeight,
-        });
+    const scene = new THREE.Scene();
 
-        const { width: initialWidth, height: initialHeight } = getSize();
-        const aspect = initialHeight > 0 ? initialWidth / initialHeight : 1;
+    const getSize = () => ({
+      width: container.clientWidth,
+      height: container.clientHeight,
+    });
 
-        const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
-        
-        camera.position.set(0, 0, 3);
+    const { width: initialWidth, height: initialHeight } = getSize();
+    const aspect = initialHeight > 0 ? initialWidth / initialHeight : 1;
 
-        const renderer = new THREE.WebGLRenderer({
-            alpha: true,
-            antialias: true
-        });
+    const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
 
-        renderer.setSize(initialWidth || 1, initialHeight || 1, false);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-        renderer.setClearColor(0x000000, 0)
+    camera.position.set(0, 0, 3);
 
-        const canvas = renderer.domElement;
-        canvas.style.position = 'absolute';
-        canvas.style.inset = '0';
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
-        canvas.style.display = 'block';
-        
-        container.appendChild(canvas);
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true,
+    });
 
-        const controls = new OrbitControls(camera, canvas);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 2.0
-        controls.enableZoom = false;
+    renderer.setSize(initialWidth || 1, initialHeight || 1, false);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setClearColor(0x000000, 0);
 
-        const geometry = new THREE.IcosahedronGeometry(1, 0);
+    const canvas = renderer.domElement;
+    canvas.style.position = "absolute";
+    canvas.style.inset = "0";
+    canvas.style.width = "100%";
+    canvas.style.height = "100%";
+    canvas.style.display = "block";
 
-        const material = new THREE.MeshBasicMaterial({
-            color: 0xffffff,
-            wireframe: true,
-            wireframeLinewidth: 5
-        })
+    container.appendChild(canvas);
 
-        const icosahedron = new THREE.Mesh(geometry, material);
-        scene.add(icosahedron);
+    const controls = new OrbitControls(camera, canvas);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 2.0;
+    controls.enableZoom = false;
 
-        let animationFrameId: number;
-        const animate = () => {
-            animationFrameId = requestAnimationFrame(animate);
+    const geometry = new THREE.IcosahedronGeometry(1, 0);
 
-            controls.update();
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      wireframe: true,
+      wireframeLinewidth: 5,
+    });
 
-            renderer.render(scene, camera)
-        }
-        animate();
+    const icosahedron = new THREE.Mesh(geometry, material);
+    scene.add(icosahedron);
 
-        const handleResize = () => {
-            const { width, height } = getSize();
-            if (width <= 0 || height <= 0) return;
+    let animationFrameId: number;
+    const animate = () => {
+      animationFrameId = requestAnimationFrame(animate);
 
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-            renderer.setSize(width, height, false);
-        }
-        const observer = new ResizeObserver(handleResize);
-        observer.observe(container);
-        handleResize();
+      controls.update();
 
-        return ()=>{
-            observer.disconnect()
+      renderer.render(scene, camera);
+    };
+    animate();
 
-            cancelAnimationFrame(animationFrameId);
+    const handleResize = () => {
+      const { width, height } = getSize();
+      if (width <= 0 || height <= 0) return;
 
-            geometry.dispose();
-            material.dispose();
-            controls.dispose();
-            renderer.dispose();
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height, false);
+    };
+    const observer = new ResizeObserver(handleResize);
+    observer.observe(container);
+    handleResize();
 
-            if (container.contains(canvas)){
-                container.removeChild(canvas)
-            }
-        }
+    return () => {
+      observer.disconnect();
 
-    }, [])
-    
-    return (
-        <div
-        ref={containerRef}
-        style={{
-            width: '100%',
-            aspectRatio: '1/1',
-            position: 'relative',
-        }}>
-        
-        </div>
-    );
+      cancelAnimationFrame(animationFrameId);
+
+      geometry.dispose();
+      material.dispose();
+      controls.dispose();
+      renderer.dispose();
+
+      if (container.contains(canvas)) {
+        container.removeChild(canvas);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        width: "100%",
+        aspectRatio: "1/1",
+        position: "relative",
+      }}
+    ></div>
+  );
 }

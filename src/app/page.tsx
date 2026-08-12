@@ -1,4 +1,18 @@
-import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background,Fade, AutoScroll, Media, Timeline, LetterFx } from "@once-ui-system/core";
+import {
+  Button,
+  Column,
+  Heading,
+  Icon,
+  RevealFx,
+  Text,
+  Row,
+  Background,
+  Fade,
+  AutoScroll,
+  Media,
+  Timeline,
+  LetterFx,
+} from "@once-ui-system/core";
 
 import Isohedron from "./_components/Isohedron";
 
@@ -8,19 +22,14 @@ export default async function Home() {
   const t = await getTranslations("HomePage");
 
   return (
-    <Column
-    fillWidth
-    paddingX="xl"
-    paddingY="48"
-    gap="xl"
-    >
+    <Column fillWidth paddingX="xl" paddingY="48" gap="xl">
       <Row
-      fillWidth
-      gap="48"
-      direction="row"
-      vertical="center"
-      horizontal="between"
-      m={{direction: "column", horizontal: "center"}}
+        fillWidth
+        gap="48"
+        direction="row"
+        vertical="center"
+        horizontal="between"
+        m={{ direction: "column", horizontal: "center" }}
       >
         <Column
           gap="24"
@@ -30,49 +39,101 @@ export default async function Home() {
           horizontal="center"
           vertical="center"
         >
-          <RevealFx m={{horizontal: "center"}}>
+          <RevealFx m={{ horizontal: "center" }}>
             <Heading variant="display-strong-xl">MEDGRAPH</Heading>
           </RevealFx>
 
-          <RevealFx delay={0.2} m={{horizontal: "center"}}>
-            <Text variant="heading-default-l" onBackground="neutral-weak">{t("subtitle")}</Text>
+          <RevealFx delay={0.2} m={{ horizontal: "center" }}>
+            <Text variant="heading-default-l" onBackground="neutral-weak">
+              {t("subtitle")}
+            </Text>
           </RevealFx>
 
-          <RevealFx delay={0.4} m={{horizontal: "center"}}>
-            <Row gap="12" m={{horizontal: "center"}}>
-              <Button href="/register" variant="primary" size="l" label="Register"/>
+          <RevealFx delay={0.4} m={{ horizontal: "center" }}>
+            <Row gap="12" m={{ horizontal: "center" }}>
+              <Button
+                href="/register"
+                variant="primary"
+                size="l"
+                label="Register"
+              />
             </Row>
           </RevealFx>
         </Column>
 
         <Column fillWidth>
           <RevealFx delay={0.6} fillWidth>
-            <Isohedron/>
+            <Isohedron />
           </RevealFx>
         </Column>
-
       </Row>
 
       <Row fillWidth position="relative" overflow="hidden">
-        <Fade zIndex="1" to="right" fillHeight width="64" position="absolute" left="0" top="0"/>
+        <Fade
+          zIndex="1"
+          to="right"
+          fillHeight
+          width="64"
+          position="absolute"
+          left="0"
+          top="0"
+        />
         <AutoScroll paddingY="40">
-          <Text paddingX="24" variant="display-strong-m">FHIR</Text>
-          <Text paddingX="24" variant="display-strong-xs">OMOP</Text>
-          <Text paddingX="24" variant="display-strong-m">SNOMED</Text>
-          <Text paddingX="24" variant="display-strong-xs">PDF</Text>
-          <Text paddingX="24" variant="display-strong-m">LOINC</Text>
-          <Text paddingX="24" variant="display-strong-xs">PNG</Text>
-          <Text paddingX="24" variant="display-strong-m">DICOM</Text>
-          <Text paddingX="24" variant="display-strong-xs">XML</Text>
-          <Text paddingX="24" variant="display-strong-m">NII</Text>
-          <Text paddingX="24" variant="display-strong-xs">HDR</Text>
+          <Text paddingX="24" variant="display-strong-m">
+            FHIR
+          </Text>
+          <Text paddingX="24" variant="display-strong-xs">
+            OMOP
+          </Text>
+          <Text paddingX="24" variant="display-strong-m">
+            SNOMED
+          </Text>
+          <Text paddingX="24" variant="display-strong-xs">
+            PDF
+          </Text>
+          <Text paddingX="24" variant="display-strong-m">
+            LOINC
+          </Text>
+          <Text paddingX="24" variant="display-strong-xs">
+            PNG
+          </Text>
+          <Text paddingX="24" variant="display-strong-m">
+            DICOM
+          </Text>
+          <Text paddingX="24" variant="display-strong-xs">
+            XML
+          </Text>
+          <Text paddingX="24" variant="display-strong-m">
+            NII
+          </Text>
+          <Text paddingX="24" variant="display-strong-xs">
+            HDR
+          </Text>
         </AutoScroll>
-        <Fade zIndex="1" to="left" fillHeight width="64" position="absolute" right="0" top="0" />
+        <Fade
+          zIndex="1"
+          to="left"
+          fillHeight
+          width="64"
+          position="absolute"
+          right="0"
+          top="0"
+        />
       </Row>
 
-      <Row radius="l" border="neutral-alpha-medium" fillWidth padding="m" m={{direction: "column"}} gap="24" vertical="center" horizontal="center" align="center">
+      <Row
+        radius="l"
+        border="neutral-alpha-medium"
+        fillWidth
+        padding="m"
+        m={{ direction: "column" }}
+        gap="24"
+        vertical="center"
+        horizontal="center"
+        align="center"
+      >
         <Media
-          src="/logo_medium.svg"
+          src="/brain_outline.svg"
           alt="Medgraph"
           maxWidth={15}
           objectFit="contain"
@@ -84,7 +145,9 @@ export default async function Home() {
         />
         <Column gap="8" fillWidth>
           <Heading variant="heading-strong-l">{t("medical_brain")}</Heading>
-          <Text variant="body-default-m" onBackground="neutral-weak">{t("medical_brain_subtitle")}</Text>
+          <Text variant="body-default-m" onBackground="neutral-weak">
+            {t("medical_brain_subtitle")}
+          </Text>
         </Column>
       </Row>
 
@@ -97,7 +160,8 @@ export default async function Home() {
             {
               marker: 1,
               label: "Ingest",
-              description: "Connect your medical data : FHIR, DICOM, PDFs, and more.",
+              description:
+                "Connect your medical data : FHIR, DICOM, PDFs, and more.",
               state: "default",
               children: (
                 <Row vertical="center" gap="48" margin="l">
@@ -138,7 +202,7 @@ export default async function Home() {
                     border="neutral-alpha-medium"
                     padding="l"
                   />
-                  <LetterFx speed="slow"charset={["+"]}>
+                  <LetterFx speed="slow" charset={["+"]}>
                     Lorem Ipsum
                   </LetterFx>
                 </Row>
@@ -169,13 +233,10 @@ export default async function Home() {
                 </Row>
               ),
             },
-            {
-
-            }
+            {},
           ]}
         />
       </Column>
-
     </Column>
   );
 }

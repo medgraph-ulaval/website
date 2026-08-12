@@ -21,7 +21,7 @@ export default async function About() {
       </RevealFx>
 
       <RevealFx>
-        <Row fillWidth gap="24" m={{ direction: "column" }} horizontal="center">
+        <Row fillWidth gap="24" m={{ direction: "column" }} horizontal="center" vertical="center">
           <Column
             fillWidth
             maxWidth={24}

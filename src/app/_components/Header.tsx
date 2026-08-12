@@ -5,9 +5,12 @@ import { usePathname } from "next/navigation";
 import { routes } from "../../resources/once-ui.config";
 import Image from "next/image";
 import { LanguageDropdown } from "./LangageDropdown";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
+
+  const router = useRouter();
 
   return (
     <>
@@ -28,13 +31,19 @@ export const Header = () => {
           horizontal="start"
           vertical="center"
           textVariant="body-default-s"
+          
         >
-          <Image
-            src="/logo_small.svg"
-            alt="Hedron logo"
-            width={32}
-            height={32}
-          />
+          <Row
+            style={{cursor: "pointer"}}
+            onClick={()=> router.push("/")}
+          >
+            <Image
+              src="/logo_small.svg"
+              alt="Hedron logo"
+              width={32}
+              height={32}
+            />
+          </Row>
         </Row>
 
         <Row

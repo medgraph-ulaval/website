@@ -1,13 +1,10 @@
 import { Button, Column, Heading, Icon, RevealFx, Text, Row, Background,Fade, AutoScroll, Media, Timeline, LetterFx } from "@once-ui-system/core";
 
-import { api } from "~/trpc/server";
 import Isohedron from "./_components/Isohedron";
 
 import { getTranslations } from "next-intl/server";
 
 export default async function Home() {
-  const hello = await api.post.hello({ text: "from Once UI" });
-
   const t = await getTranslations("HomePage");
 
   return (

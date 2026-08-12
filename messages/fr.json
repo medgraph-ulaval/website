@@ -37,6 +37,7 @@
 
     "WaitlistForm":{
         "email": "Courriel",
-        "join": "Rejoindre"
+        "join": "Rejoindre",
+        "success": "Merci d'avoir rejoint MEDGRAPH, vous allez être notifié quand le produit est prêt"
     }
 }

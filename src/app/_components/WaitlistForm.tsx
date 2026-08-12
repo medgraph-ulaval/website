@@ -3,20 +3,23 @@
 import {useState, type SetStateAction} from "react"
 
 import { useTranslations } from "next-intl";
-import { Input, Column, Button, Icon } from "@once-ui-system/core";
+import { Input, Column, Button, Icon, Text } from "@once-ui-system/core";
+import { api } from "~/trpc/react";
 
 export function WaitlistForm(){
     const t = useTranslations("WaitlistForm")
 
     const [email, setEmail] = useState("")
+    const join = api.waitlist.join.useMutation()
 
     return (
-        <Column gap="16" vertical="center" fillWidth maxWidth={24} horizontal="center">
-            <form
-                onSubmit={(e)=>{
-                    e.preventDefault();
-                }}
-            >
+        <form
+            onSubmit={(e)=>{
+                e.preventDefault();
+                join.mutate({email})
+            }}
+        >
+            <Column gap="l" vertical="center" fillWidth maxWidth={24} horizontal="center">
                 <Input
                     id="waitlist-email"
                     label={t("email")}
@@ -32,10 +35,16 @@ export function WaitlistForm(){
                             variant="primary"
                             size="s"
                             type="submit"
+                            loading={join.isPending}
                         />  
                     }
+                    error={!!join.error}
+                    errorMessage={join.error?.message}
                 />
-            </form>
-        </Column>
+                {join.isSuccess && (
+                    <Text onBackground="success-medium" align="center">{t("success")}</Text>
+                )}
+            </Column>
+        </form>
     );
 }

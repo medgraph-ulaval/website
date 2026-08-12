@@ -28,6 +28,7 @@
 
     "WaitlistForm":{
         "email": "Email",
-        "join": "Join"
+        "join": "Join",
+        "success": "Thanks for joining MEDGRAPH, you will be notified when our solution is ready."
     }
 }

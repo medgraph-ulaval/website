@@ -16,7 +16,7 @@
         "medical_brain": "Contruisez votre cerveau médical",
         "medical_brain_subtitle": "Toutes les données hétérogènes combinées donne un portrait de santé longitudinale.",
         
-        "how_it_works": "Comment MEDGRAPH fonctionne",
+        "how_it_works": "Comment MEDGRAPH fonctionne?",
         "ingest": "Ingest",
         "ingest_subtitle": "",
         "unify": "Unify",
@@ -31,7 +31,12 @@
 
     },
 
-    "RegisterPage:":{
+    "RegisterPage":{
+        "join": "Rejoignez la liste d'attente!"
+    },
 
+    "WaitlistForm":{
+        "email": "Courriel",
+        "join": "Rejoindre"
     }
 }

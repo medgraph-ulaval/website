@@ -59,16 +59,16 @@ export default async function Home() {
       <Row fillWidth position="relative" overflow="hidden">
         <Fade zIndex="1" to="right" fillHeight width="64" position="absolute" left="0" top="0"/>
         <AutoScroll paddingY="40">
-          <Text paddingX="24">FHIR</Text>
-          <Text paddingX="24">OMOP</Text>
-          <Text paddingX="24">SNOMED</Text>
-          <Text paddingX="24">PDF</Text>
-          <Text paddingX="24">LOINC</Text>
-          <Text paddingX="24">PNG</Text>
-          <Text paddingX="24">DICOM</Text>
-          <Text paddingX="24">XML</Text>
-          <Text paddingX="24">NII</Text>
-          <Text paddingX="24">HDR</Text>
+          <Text paddingX="24" variant="display-strong-m">FHIR</Text>
+          <Text paddingX="24" variant="display-strong-xs">OMOP</Text>
+          <Text paddingX="24" variant="display-strong-m">SNOMED</Text>
+          <Text paddingX="24" variant="display-strong-xs">PDF</Text>
+          <Text paddingX="24" variant="display-strong-m">LOINC</Text>
+          <Text paddingX="24" variant="display-strong-xs">PNG</Text>
+          <Text paddingX="24" variant="display-strong-m">DICOM</Text>
+          <Text paddingX="24" variant="display-strong-xs">XML</Text>
+          <Text paddingX="24" variant="display-strong-m">NII</Text>
+          <Text paddingX="24" variant="display-strong-xs">HDR</Text>
         </AutoScroll>
         <Fade zIndex="1" to="left" fillHeight width="64" position="absolute" right="0" top="0" />
       </Row>
@@ -92,7 +92,7 @@ export default async function Home() {
       </Row>
 
       <Column fillWidth gap="24">
-        <Heading variant="heading-strong-l">How MEDGRAPH works</Heading>
+        <Heading variant="heading-strong-l">{t("how_it_works")}</Heading>
         <Timeline
           fillWidth
           size="s"

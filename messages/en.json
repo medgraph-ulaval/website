@@ -15,14 +15,19 @@
         "subtitle": "The first medical-grade harness.",
         "medical_brain": "Build your medical brain",
         "medical_brain_subtitle": "All heterogenous data combines for a complete health timeline.",
-        "how_it_works": "How MEDGRAPH works"
+        "how_it_works": "How MEDGRAPH works?"
     },
 
     "AboutPage":{
 
     },
 
-    "RegisterPage:":{
+    "RegisterPage":{
+        "join": "Join the wait list now!"
+    },
 
+    "WaitlistForm":{
+        "email": "Email",
+        "join": "Join"
     }
 }

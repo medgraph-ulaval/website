@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
-import { HiAtSymbol, HiCursorArrowRipple, HiOutlineHome, HiOutlineRocketLaunch } from "react-icons/hi2";
-import {FaGithub, FaLinkedin, FaYoutube} from "react-icons/fa"
+import { HiAtSymbol, HiCursorArrowRipple, HiOutlineHome, HiOutlineRocketLaunch, HiOutlineEnvelope} from "react-icons/hi2";
+import {FaGithub, FaLinkedin, FaYoutube, } from "react-icons/fa"
 
 export const iconLibrary: Record<string, IconType> = {
   rocket: HiOutlineRocketLaunch,
@@ -9,7 +9,8 @@ export const iconLibrary: Record<string, IconType> = {
   cursor: HiCursorArrowRipple,
   github: FaGithub,
   linkedin: FaLinkedin,
-  youtube: FaYoutube
+  youtube: FaYoutube,
+  email: HiOutlineEnvelope
 };
 
 export type IconLibrary = typeof iconLibrary;

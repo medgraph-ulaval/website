@@ -14,12 +14,15 @@ export default function Isohedron (){
         
         const scene = new THREE.Scene();
 
-        const camera = new THREE.PerspectiveCamera(
-            75,
-            container.clientWidth/ container.clientHeight,
-            0.1,
-            1000
-        );
+        const getSize = () => ({
+            width: container.clientWidth,
+            height: container.clientHeight,
+        });
+
+        const { width: initialWidth, height: initialHeight } = getSize();
+        const aspect = initialHeight > 0 ? initialWidth / initialHeight : 1;
+
+        const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 1000);
         
         camera.position.set(0, 0, 3);
 
@@ -28,13 +31,20 @@ export default function Isohedron (){
             antialias: true
         });
 
-        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setSize(initialWidth || 1, initialHeight || 1, false);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
         renderer.setClearColor(0x000000, 0)
-        
-        container.appendChild(renderer.domElement);
 
-        const controls = new OrbitControls(camera, renderer.domElement);
+        const canvas = renderer.domElement;
+        canvas.style.position = 'absolute';
+        canvas.style.inset = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.display = 'block';
+        
+        container.appendChild(canvas);
+
+        const controls = new OrbitControls(camera, canvas);
         controls.enableDamping = true;
         controls.dampingFactor = 0.05;
         controls.autoRotate = true;
@@ -63,15 +73,20 @@ export default function Isohedron (){
         animate();
 
         const handleResize = () => {
-            if (!container) return;
-            camera.aspect = container.clientWidth / container.clientHeight;
+            const { width, height } = getSize();
+            if (width <= 0 || height <= 0) return;
+
+            camera.aspect = width / height;
             camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setSize(width, height, false);
         }
-        window.addEventListener('resize', handleResize)
+        const observer = new ResizeObserver(handleResize);
+        observer.observe(container);
+        handleResize();
 
         return ()=>{
-            window.removeEventListener('resize', handleResize);
+            observer.disconnect()
+
             cancelAnimationFrame(animationFrameId);
 
             geometry.dispose();
@@ -79,8 +94,8 @@ export default function Isohedron (){
             controls.dispose();
             renderer.dispose();
 
-            if (container.contains(renderer.domElement)){
-                container.removeChild(renderer.domElement)
+            if (container.contains(canvas)){
+                container.removeChild(canvas)
             }
         }
 
@@ -91,7 +106,8 @@ export default function Isohedron (){
         ref={containerRef}
         style={{
             width: '100%',
-            height: '500px'
+            aspectRatio: '1/1',
+            position: 'relative',
         }}>
         
         </div>

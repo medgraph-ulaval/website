@@ -13,12 +13,12 @@ export const Footer = () => {
     const t = useTranslations("Footer");
 
     return (
-        <Column>
+        <Column fillWidth>
             <Line/>
 
-            <Column padding="128" paddingBottom="64" gap="64">
+            <Column padding="128" paddingBottom="64" gap="64" fillWidth>
 
-                <Row fillWidth gap="128">
+                <Row fillWidth gap="128" s={{direction: "column"}} horizontal="center">
                     <Column gap="32">
                         <Text variant="body-strong-m">{t("company")}</Text>
                         <SmartLink href="/about">{t("about")}</SmartLink>

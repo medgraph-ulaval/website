@@ -39,6 +39,7 @@ export const Header = () => {
                     gap="4"
                     vertical="center"
                     textVariant="body-default-s"
+                    s={{hide:true}}
                     >
                         {routes["/"] && (
                             <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"}/>
@@ -52,6 +53,28 @@ export const Header = () => {
 
                         {routes["/register"] && (
                             <ToggleButton prefixIcon="cursor" href="/register" selected={pathname === "/register"} label="Register"/>
+                        )}
+                    </Row>
+
+                    <Row
+                    gap="4"
+                    vertical="center"
+                    textVariant="body-default-s"
+                    hide
+                    s={{hide:false}}
+                    >
+                        {routes["/"] && (
+                            <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"}/>
+                        )}
+                        
+                        <Line background="neutral-alpha-medium" vert maxHeight="24" />
+
+                        {routes["/about"] && (
+                            <ToggleButton prefixIcon="at" href="/about" selected={pathname === "/about"}/>
+                        )}
+
+                        {routes["/register"] && (
+                            <ToggleButton prefixIcon="cursor" href="/register" selected={pathname === "/register"}/>
                         )}
                     </Row>
                 </Row>

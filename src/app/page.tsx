@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <Column
     fillWidth
-    paddingX="128"
+    paddingX="xl"
     paddingY="48"
     gap="xl"
     >
@@ -28,7 +28,8 @@ export default async function Home() {
         <Column
           gap="24"
           fillWidth
-          width={40}
+          width={120}
+          paddingX="xl"
           horizontal="center"
           vertical="center"
         >
@@ -48,7 +49,7 @@ export default async function Home() {
         </Column>
 
         <Column fillWidth>
-          <RevealFx delay={0.6}>
+          <RevealFx delay={0.6} fillWidth>
             <Isohedron/>
           </RevealFx>
         </Column>
@@ -58,16 +59,16 @@ export default async function Home() {
       <Row fillWidth position="relative" overflow="hidden">
         <Fade zIndex="1" to="right" fillHeight width="64" position="absolute" left="0" top="0"/>
         <AutoScroll paddingY="40">
-          <Text>FHIR</Text>
-          <Text>OMOP</Text>
-          <Text>SNOMED</Text>
-          <Text>PDF</Text>
-          <Text>LOINC</Text>
-          <Text>PNG</Text>
-          <Text>DICOM</Text>
-          <Text>XML</Text>
-          <Text>NII</Text>
-          <Text>HDR</Text>
+          <Text paddingX="24">FHIR</Text>
+          <Text paddingX="24">OMOP</Text>
+          <Text paddingX="24">SNOMED</Text>
+          <Text paddingX="24">PDF</Text>
+          <Text paddingX="24">LOINC</Text>
+          <Text paddingX="24">PNG</Text>
+          <Text paddingX="24">DICOM</Text>
+          <Text paddingX="24">XML</Text>
+          <Text paddingX="24">NII</Text>
+          <Text paddingX="24">HDR</Text>
         </AutoScroll>
         <Fade zIndex="1" to="left" fillHeight width="64" position="absolute" right="0" top="0" />
       </Row>
@@ -76,8 +77,7 @@ export default async function Home() {
         <Media
           src="/logo_medium.svg"
           alt="Medgraph"
-          width={15}
-          height={15}
+          maxWidth={15}
           objectFit="contain"
           unoptimized
           fillWidth
@@ -141,7 +141,7 @@ export default async function Home() {
                     border="neutral-alpha-medium"
                     padding="l"
                   />
-                  <LetterFx speed="slow" trigger="instant" charset={["+"]}>
+                  <LetterFx speed="slow"charset={["+"]}>
                     Lorem Ipsum
                   </LetterFx>
                 </Row>
@@ -166,14 +166,14 @@ export default async function Home() {
                     border="neutral-alpha-medium"
                     padding="l"
                   />
-                  <LetterFx speed="slow" trigger="instant" charset={["+"]}>
+                  <LetterFx speed="slow" charset={["+"]}>
                     Lorem Ipsum
                   </LetterFx>
                 </Row>
               ),
             },
             {
-              
+
             }
           ]}
         />

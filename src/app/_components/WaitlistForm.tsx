@@ -8,6 +8,7 @@ import { api } from "~/trpc/react";
 
 export function WaitlistForm() {
   const t = useTranslations("WaitlistForm");
+  const t_error = useTranslations("Error");
 
   const [email, setEmail] = useState("");
   const join = api.waitlist.join.useMutation();
@@ -18,6 +19,7 @@ export function WaitlistForm() {
         e.preventDefault();
         join.mutate({ email });
       }}
+      noValidate
     >
       <Column
         gap="l"
@@ -52,7 +54,7 @@ export function WaitlistForm() {
             />
           }
           error={!!join.error}
-          errorMessage={join.error?.message}
+          errorMessage={(join.error ? t_error("invalid_email_format") : undefined)}
         />
         {join.isSuccess && (
           <Text onBackground="success-medium" align="center">

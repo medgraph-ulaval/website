@@ -21,7 +21,7 @@ export default async function About() {
       </RevealFx>
 
       <RevealFx>
-        <Row fillWidth gap="24" m={{ direction: "column" }} horizontal="center" vertical="center">
+        <Row fillWidth gap="24" m={{ direction: "column" }} horizontal="center" vertical="center" align="center">
           <Column
             fillWidth
             maxWidth={24}
@@ -39,7 +39,7 @@ export default async function About() {
               border="neutral-alpha-medium"
             />
             <Heading variant="heading-strong-l">Jordan Mathieu</Heading>
-            <Text onBackground="neutral-weak">subtitle</Text>
+            <Text onBackground="neutral-weak">{t("jordan_mathieu_subtitle")}</Text>
           </Column>
 
           <Column
@@ -59,7 +59,7 @@ export default async function About() {
               border="neutral-alpha-medium"
             />
             <Heading variant="heading-strong-l">Louis-Etienne Messier</Heading>
-            <Text onBackground="neutral-weak">subtitle</Text>
+            <Text onBackground="neutral-weak">{t("louis-etienne_messier_subtitle")}</Text>
           </Column>
         </Row>
       </RevealFx>

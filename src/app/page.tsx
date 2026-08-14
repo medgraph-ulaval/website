@@ -55,7 +55,7 @@ export default async function Home() {
                 href="/register"
                 variant="primary"
                 size="l"
-                label="Register"
+                label={t("register_button")}
               />
             </Row>
           </RevealFx>
@@ -159,9 +159,9 @@ export default async function Home() {
           items={[
             {
               marker: 1,
-              label: "Ingest",
+              label: t("ingest"),
               description:
-                "Connect your medical data : FHIR, DICOM, PDFs, and more.",
+                t("ingest_subtitle"),
               state: "default",
               children: (
                 <Row vertical="center" gap="48" margin="l">
@@ -185,8 +185,8 @@ export default async function Home() {
             },
             {
               marker: 2,
-              label: "Unify",
-              description: "Normalize into one patient timeline.",
+              label: t("unify"),
+              description: t("unify_subtitle"),
               state: "default",
               children: (
                 <Row vertical="center" gap="48" margin="l">
@@ -210,8 +210,8 @@ export default async function Home() {
             },
             {
               marker: 3,
-              label: "Act",
-              description: "Query and reason over the medical brain.",
+              label: t("act"),
+              description: t("act_subtitle"),
               state: "default",
               children: (
                 <Row vertical="center" gap="48" margin="l">

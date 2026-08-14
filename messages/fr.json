@@ -13,23 +13,28 @@
     },
     "HomePage":{
         "subtitle": "Le premier harnais de grade médical.",
+        "register_button": "S'inscrire",
+
         "medical_brain": "Contruisez votre cerveau médical",
         "medical_brain_subtitle": "Toutes les données hétérogènes combinées donne un portrait de santé longitudinale.",
         
         "how_it_works": "Comment MEDGRAPH fonctionne?",
-        "ingest": "Ingest",
-        "ingest_subtitle": "",
-        "unify": "Unify",
-        "unify_subtitle": "",
-        "act": "Act",
-        "act_subtitle": ""
+        "ingest": "Ingestion",
+        "ingest_subtitle": "Connectez votre données médicales : FHIR, DICOM, PDFs, et plus.",
+        "unify": "Uniformisation",
+        "unify_subtitle": "Normalizez vos données en une ligne du temps consistante.",
+        "act": "Action",
+        "act_subtitle": "Interrogez and raisonnez avec le cerveau médical."
 
 
     },
 
     "AboutPage":{
         "title": "À propos de MEDGRAPH",
-        "subtitle": "Rencontrez les fondateurs"
+        "subtitle": "Rencontrez les fondateurs",
+
+        "louis-etienne_messier_subtitle": "Étudiant en génie logiciel et passionné des sciences médicales",
+        "jordan_mathieu_subtitle": "Étudiant en génie logiciel et entrepreneur"
     },
 
     "RegisterPage":{
@@ -40,5 +45,9 @@
         "email": "Courriel",
         "join": "Rejoindre",
         "success": "Merci d'avoir rejoint MEDGRAPH, vous allez être notifié quand le produit est prêt"
+    },
+
+    "Error":{
+        "invalid_email_format": "Format de courriel invalide"
     }
 }

@@ -13,15 +13,26 @@
     },
     "HomePage":{
         "subtitle": "The first medical-grade harness.",
+        "register_button": "Register",
+
         "medical_brain": "Build your medical brain",
         "medical_brain_subtitle": "All heterogenous data combines for a complete health timeline.",
-        "how_it_works": "How MEDGRAPH works?"
+        "how_it_works": "How MEDGRAPH works?",
+
+        "ingest": "Ingest",
+        "ingest_subtitle": "Connect your medical data : FHIR, DICOM, PDFs, and more.",
+        "unify": "Unify",
+        "unify_subtitle": "Normalize into one patient timeline.",
+        "act": "Act",
+        "act_subtitle": "Query and reason over the medical brain."
     },
 
     "AboutPage":{
         "title": "About MEDGRAPH",
-        "subtitle": "Meet the founders"
+        "subtitle": "Meet the founders",
 
+        "louis-etienne_messier_subtitle": "Software engineer student and passionate about health science",
+        "jordan_mathieu_subtitle": "Software engineer student and entrepreneur"
     },
 
     "RegisterPage":{
@@ -32,5 +43,9 @@
         "email": "Email",
         "join": "Join",
         "success": "Thanks for joining MEDGRAPH, you will be notified when our solution is ready."
+    },
+
+    "Error":{
+        "invalid_email_format": "Invalid email format"
     }
 }

@@ -21,17 +21,20 @@
         "how_it_works": "Comment MEDGRAPH fonctionne?",
         "ingest": "Ingestion",
         "ingest_subtitle": "Connectez votre données médicales : FHIR, DICOM, PDFs, et plus.",
+        "ingest_description": "MEDGRAPH permet des connections simples et efficaces.",
         "unify": "Uniformisation",
         "unify_subtitle": "Normalizez vos données en une ligne du temps consistante.",
+        "unify_description": "MEDGRAPH synchronise toutes les formes de données pertinentes pour vous.",
         "act": "Action",
-        "act_subtitle": "Interrogez and raisonnez avec le cerveau médical."
-
-
+        "act_subtitle": "Interrogez and raisonnez avec le cerveau médical.",
+        "act_description": "Le cerveau de MEDGRAPH permet des raisonnements complexes sur les données non-structurées."
     },
 
     "AboutPage":{
         "title": "À propos de MEDGRAPH",
         "subtitle": "Rencontrez les fondateurs",
+
+        "mission": "Mission and Vision",
 
         "louis-etienne_messier_subtitle": "Étudiant en génie logiciel et passionné des sciences médicales",
         "jordan_mathieu_subtitle": "Étudiant en génie logiciel et entrepreneur"

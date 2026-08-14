@@ -21,15 +21,20 @@
 
         "ingest": "Ingest",
         "ingest_subtitle": "Connect your medical data : FHIR, DICOM, PDFs, and more.",
+        "ingest_description": "MEDGRAPH empowers you with simple and effective connections.",
         "unify": "Unify",
         "unify_subtitle": "Normalize into one patient timeline.",
+        "unify_description": "MEDGRAPH synchronizes all useful data for you.",
         "act": "Act",
-        "act_subtitle": "Query and reason over the medical brain."
+        "act_subtitle": "Query and reason over the medical brain.",
+        "act_description": "MEDGRAPH's brain allow complex reasoning over unstructured data."
     },
 
     "AboutPage":{
         "title": "About MEDGRAPH",
         "subtitle": "Meet the founders",
+
+        "mission": "Mission and Vision",
 
         "louis-etienne_messier_subtitle": "Software engineer student and passionate about health science",
         "jordan_mathieu_subtitle": "Software engineer student and entrepreneur"

@@ -17,6 +17,7 @@ import {
 import Isohedron from "./_components/Isohedron";
 
 import { getTranslations } from "next-intl/server";
+import { DotLottie, DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default async function Home() {
   const t = await getTranslations("HomePage");
@@ -165,20 +166,21 @@ export default async function Home() {
               state: "default",
               children: (
                 <Row vertical="center" gap="48" margin="l">
-                  <Media
-                    src="/logo_medium.svg"
-                    alt="Medgraph"
-                    width={15}
-                    height={15}
-                    objectFit="contain"
-                    unoptimized
-                    fillWidth
+                  <Column
                     radius="l"
                     border="neutral-alpha-medium"
-                    padding="l"
-                  />
+                    background="neutral-alpha-weak"
+                  >
+                    <DotLottieReact
+                        src="/animations/ingest_puzzle.lottie"
+                        autoplay
+                        style={{ width: 250, height: 250 }}
+                        renderConfig={{ autoResize: true, devicePixelRatio: 2 }}
+                    />
+                  </Column>
+ 
                   <LetterFx speed="slow" trigger="instant" charset={["+"]}>
-                    Lorem Ipsum
+                    {t("ingest_description")}
                   </LetterFx>
                 </Row>
               ),
@@ -190,20 +192,20 @@ export default async function Home() {
               state: "default",
               children: (
                 <Row vertical="center" gap="48" margin="l">
-                  <Media
-                    src="/logo_medium.svg"
-                    alt="Medgraph"
-                    width={15}
-                    height={15}
-                    objectFit="contain"
-                    unoptimized
-                    fillWidth
+                  <Column
                     radius="l"
                     border="neutral-alpha-medium"
-                    padding="l"
-                  />
+                    background="neutral-alpha-weak"
+                  >
+                    <DotLottieReact
+                        src="/animations/unify_nodes.json"
+                        autoplay
+                        style={{ width: 250, height: 250 }}
+                        renderConfig={{ autoResize: true, devicePixelRatio: 2 }}
+                    />
+                  </Column>
                   <LetterFx speed="slow" charset={["+"]}>
-                    Lorem Ipsum
+                    {t("unify_description")}
                   </LetterFx>
                 </Row>
               ),
@@ -228,7 +230,7 @@ export default async function Home() {
                     padding="l"
                   />
                   <LetterFx speed="slow" charset={["+"]}>
-                    Lorem Ipsum
+                    {t("act_description")}
                   </LetterFx>
                 </Row>
               ),
